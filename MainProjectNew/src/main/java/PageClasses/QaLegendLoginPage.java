@@ -30,7 +30,7 @@ public class QaLegendLoginPage {
 		public void LoginToQaLegend(String username,String password) {
 			PageUtilities.enterText(usernamefield, username);
 			PageUtilities.enterText(passwordfield, password);
-			PageUtilities.clickAnElement(driver,loginbutton);
+			PageUtilities.clickOnElement(loginbutton);
 		}
 		
 		
