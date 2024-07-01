@@ -17,6 +17,10 @@ public class QaLegendNotesPage {
 		WebElement descriptionfield;
 		@FindBy(xpath="//button[@class='btn btn-primary']")
 		WebElement savebutton;
+		@FindBy(xpath="//input[@placeholder='Search']")
+		WebElement notessearchbox;
+		@FindBy(xpath="(//a[@class='edit'])[1]")
+		WebElement searchtitle;
 		
 		
 		
@@ -34,4 +38,15 @@ public class QaLegendNotesPage {
 			PageUtilities.clickOnElement(savebutton);
 		}
 		
+	 public void searchNotes(String title,WebDriver driver) {
+		 PageUtilities.enterText(notessearchbox, title);
+		 PageUtilities.clickAnElement(driver,notessearchbox);
+	 }
+	 
+	 public String getNoteTitle() {
+		 String gettitle=PageUtilities.getElementText(searchtitle);
+		 return gettitle;
+		
 }
+}
+

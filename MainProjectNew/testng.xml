@@ -4,6 +4,14 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="TestCases.QaLegend_TestCases"/>
+      <methods>
+		<!--<include name="addEditNotes"></include>-->
+		<!--<include name="addEvents"></include>-->
+		<!--<include name="addClients"></include>-->
+		<!--<include name="composeMessage"></include>-->
+		<!--<include name="addpayments"></include>-->
+		<include name="additems"></include>
+	  </methods>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

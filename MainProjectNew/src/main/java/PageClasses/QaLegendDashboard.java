@@ -17,6 +17,13 @@ public class QaLegendDashboard {
 		WebElement messagestab;
 		@FindBy(xpath="//span[text()='Clients']")
 		WebElement clientstab;
+		@FindBy(xpath="//span[text()='Invoices']")
+		WebElement invoicestab;
+		@FindBy(xpath="//span[text()='Items']")
+		WebElement itemstab;
+		@FindBy(xpath="//span[text()='Team members']")
+		WebElement teammemberstab;
+		
 		
 		
 		
@@ -32,4 +39,33 @@ public class QaLegendDashboard {
 		public void clicksOnNotesOption() {
 			PageUtilities.clickOnElement(notestab);
 		}
+		
+		public void clicksOnEventsOption() {
+			PageUtilities.clickOnElement(eventstab);
+		}
+		
+		public void clicksOnClientsOption(){
+			PageUtilities.clickOnElement(clientstab);
+		}
+
+		public void clicksOnMessagesTab() {
+			PageUtilities.clickOnElement(messagestab);
+		}
+		
+		public void clicksOnInvoicesTab() {
+			PageUtilities.clickOnElement(invoicestab);  
+		}
+		
+		public void clicksOnAddItemsPage() {
+			PageUtilities.clickOnElement(itemstab);
+		}
+		
+		public void clicksOnTeamMembersPage() {
+			PageUtilities.clickOnElement(teammemberstab);
+		}
+
 }
+
+
+
+
