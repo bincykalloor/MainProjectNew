@@ -103,7 +103,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="TestCases.QaLegend_TestCases" class="method navigator-link" hash-for-method="additems">additems</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="TestCases.QaLegend_TestCases" class="method navigator-link" hash-for-method="forgotpasswordlink">forgotpasswordlink</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -126,9 +126,9 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="additems">
-                  </a> <!-- additems -->
-                  <span class="method-name">additems</span>
+                  <a name="forgotpasswordlink">
+                  </a> <!-- forgotpasswordlink -->
+                  <span class="method-name">forgotpasswordlink</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -143,11 +143,14 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;TestCases.Listeners&quot;/&gt;
+  &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;TestCases.QaLegend_TestCases&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;additems&quot;/&gt;
+          &lt;include name=&quot;forgotpasswordlink&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- TestCases.QaLegend_TestCases --&gt;
     &lt;/classes&gt;
@@ -191,14 +194,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'additems')
+data.setCell(0, 1, 'forgotpasswordlink')
 data.setCell(0, 2, 'TestCases.QaLegend_TestCases')
-data.setCell(0, 3, 4858);
+data.setCell(0, 3, 475);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 seconds</span>
+              <span class="suite-total-time">Total running time: 475 ms</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -213,21 +216,27 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">5 ignored methods</span>
+            <span class="header-content">8 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">TestCases.QaLegend_TestCases</span>
               <div class="ignored-methods-div">
+                <span class="ignored-method-name">addEditNotes</span>
+                <br/>
+                <span class="ignored-method-name">addannouncement</span>
+                <br/>
+                <span class="ignored-method-name">additems</span>
+                <br/>
+                <span class="ignored-method-name">addpayments</span>
+                <br/>
                 <span class="ignored-method-name">addEvents</span>
+                <br/>
+                <span class="ignored-method-name">addmemberdetails</span>
                 <br/>
                 <span class="ignored-method-name">composeMessage</span>
                 <br/>
                 <span class="ignored-method-name">addClients</span>
-                <br/>
-                <span class="ignored-method-name">addEditNotes</span>
-                <br/>
-                <span class="ignored-method-name">addpayments</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -245,8 +254,8 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">additems</span>
-                <span class="method-start">4685 ms</span>
+                <span class="method-name">forgotpasswordlink</span>
+                <span class="method-start">6931 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

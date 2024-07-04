@@ -10,31 +10,44 @@ import Utilities.PageUtilities;
 public class QaLegendMessagesPage {
 		
 		WebDriver driver;
-		@FindBy(xpath="//a[@title='Send message']")
-		WebElement composebutton;
-		@FindBy(xpath="//span[@id='select2-chosen-725']")
-		WebElement tofield;
-		@FindBy(xpath="//input[@id='subject']")
-		WebElement subjectfield;
-		@FindBy(xpath="//textarea[@placeholder='Write a message...']")
-		WebElement messagefield;
-		@FindBy(xpath="//button[text()=' Send']")
-		WebElement sendbutton;
-				
+		@FindBy(xpath = "//a[text()='Compose']")
+		WebElement composeTab;
+		@FindBy(id = "s2id_to_user_id")
+		WebElement toBox;
+		@FindBy(xpath = "//div[@id='select2-drop']//input")
+		WebElement toSearchBox;
+		@FindBy(xpath = "//div[@class='select2-result-label']")
+		WebElement senderName;
+		@FindBy(xpath = "//input[@name='subject']")
+		WebElement subjectBox;
+		@FindBy(xpath = "//button[text()=' Send']")
+		WebElement sendButton;
+		@FindBy(xpath = "//textarea[@name='message']")
+		WebElement writeAmessage;
 
+		
+		
+		
+		
 
+		
 		public QaLegendMessagesPage(WebDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 		}
 		
 		
-		public void composemessage(String tofield,String subjectfield,String messagefield) {
-			PageUtilities.clickOnElement(composebutton);
-			
-			PageUtilities.clickOnElement(sendbutton);
-			
-			
-		}
+		public void composeMessage(String toField, String subjectField, String messageField) {
+			PageUtilities.clickOnElement(composeTab);
+			PageUtilities.clickOnElement(toBox);
+			PageUtilities.enterText(toSearchBox, toField);
+			PageUtilities.clickOnElement(senderName);
+			PageUtilities.enterText(subjectBox, subjectField);
+			PageUtilities.enterText(writeAmessage, messageField);
+			PageUtilities.clickOnElement(sendButton);
 
+		}
+		
+		
 }
+

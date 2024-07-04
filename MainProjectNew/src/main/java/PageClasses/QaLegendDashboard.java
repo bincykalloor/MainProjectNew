@@ -23,6 +23,8 @@ public class QaLegendDashboard {
 		WebElement itemstab;
 		@FindBy(xpath="//span[text()='Team members']")
 		WebElement teammemberstab;
+		@FindBy(xpath="//span[text()='Announcements']")
+		WebElement announcementtab;
 		
 		
 		
@@ -60,10 +62,13 @@ public class QaLegendDashboard {
 			PageUtilities.clickOnElement(itemstab);
 		}
 		
-		public void clicksOnTeamMembersPage() {
+		public void clicksOnTeamMembersTab() {
 			PageUtilities.clickOnElement(teammemberstab);
 		}
 
+		public void clicksOnAnnouncementTab() {
+			PageUtilities.clickOnElement(announcementtab);
+		}
 }
 
 

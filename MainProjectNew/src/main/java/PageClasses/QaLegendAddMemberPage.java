@@ -3,6 +3,9 @@ package PageClasses;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import Utilities.PageUtilities;
 
 public class QaLegendAddMemberPage {
 		WebDriver driver;
@@ -12,7 +15,7 @@ public class QaLegendAddMemberPage {
 		WebElement firstnamefield;
 		@FindBy(xpath="//input[@id='last_name']")
 		WebElement lastnamefield;
-		@FindBy(xpath="//button[text()=' Next']")
+		@FindBy(xpath="//button[@id='form-next']")
 		WebElement nextbutton;
 		@FindBy(xpath="//input[@id='job_title']")
 		WebElement jobtitlefield;
@@ -32,7 +35,18 @@ public class QaLegendAddMemberPage {
 		
 		
 		
-		public void addmember() {
+		public QaLegendAddMemberPage(WebDriver driver) {
+			this.driver=driver;
+			PageFactory.initElements(driver, this);
 			
+		}
+
+
+
+		public void addmember(String firstname,String lastname ) {
+			PageUtilities.clickOnElement(addmemberfield);
+			PageUtilities.enterText(firstnamefield, firstname);
+			PageUtilities.enterText(lastnamefield, lastname);
+			PageUtilities.clickOnElement(addmemberfield); 
 		}
 }

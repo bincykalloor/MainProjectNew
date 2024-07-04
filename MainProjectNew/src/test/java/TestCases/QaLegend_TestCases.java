@@ -12,10 +12,13 @@ import org.testng.annotations.Test;
 
 import AutomationCore.BaseClass;
 import PageClasses.QaLegendAddItemPage;
+import PageClasses.QaLegendAddMemberPage;
 import PageClasses.QaLegendAddPaymentPage;
+import PageClasses.QaLegendAnnouncementPage;
 import PageClasses.QaLegendClientsPage;
 import PageClasses.QaLegendDashboard;
 import PageClasses.QaLegendEventsPage;
+import PageClasses.QaLegendForgotPassword;
 import PageClasses.QaLegendLoginPage;
 import PageClasses.QaLegendMessagesPage;
 import PageClasses.QaLegendNotesPage;
@@ -33,6 +36,9 @@ public class QaLegend_TestCases extends BaseClass {
 		QaLegendMessagesPage messagepage;
 		QaLegendAddPaymentPage addpaymentpage;
 		QaLegendAddItemPage additemspage;
+		QaLegendAddMemberPage addmemberpage;
+		QaLegendAnnouncementPage addannouncementpage;
+		QaLegendForgotPassword forgotpasswordlink;
 		Random rand;
 	@BeforeMethod	
 		public void initialization()throws Exception {
@@ -45,6 +51,9 @@ public class QaLegend_TestCases extends BaseClass {
 			messagepage=new QaLegendMessagesPage(driver);
 			addpaymentpage=new QaLegendAddPaymentPage(driver);
 			additemspage=new QaLegendAddItemPage(driver);
+			addmemberpage=new QaLegendAddMemberPage(driver);
+			addannouncementpage=new QaLegendAnnouncementPage(driver);
+			forgotpasswordlink=new QaLegendForgotPassword(driver);
 			rand=new Random();
 			driver.manage().window().maximize();
 			props=new Properties();
@@ -82,7 +91,11 @@ public class QaLegend_TestCases extends BaseClass {
 	public void composeMessage() {
 		loginpage.LoginToQaLegend(props.getProperty("username"), props.getProperty("password"));
 		dashboard.clicksOnMessagesTab();
-		messagepage.composemessage(props.getProperty("to"), props.getProperty("subject"), props.getProperty("message"));
+		//messagepage.composeMessage(props.getProperty("to"), props.getProperty("subject"), props.getProperty("message"));
+		String subject=props.getProperty("subject")+rand.nextInt(1000);
+		String message=props.getProperty("message")+rand.nextInt(1000);
+		messagepage.composeMessage(props.getProperty("to"), subject, message);
+		
 		
 		
 	}
@@ -99,4 +112,28 @@ public class QaLegend_TestCases extends BaseClass {
 		dashboard.clicksOnAddItemsPage();
 		additemspage.additems(props.getProperty("itemtitle"), props.getProperty("itemdescription"), props.getProperty("itemunittype"), props.getProperty("itemrate"));
 	}
+	
+	@Test
+	public void addmemberdetails() {
+		loginpage.LoginToQaLegend(props.getProperty("username"), props.getProperty("password"));
+		dashboard.clicksOnTeamMembersTab();
+		addmemberpage.addmember(props.getProperty("firstname"), props.getProperty("lastname"));
+		
+		
+	}
+	@Test
+	public void addannouncement() {
+		loginpage.LoginToQaLegend(props.getProperty("username"), props.getProperty("password"));
+		dashboard.clicksOnAnnouncementTab();
+		addannouncementpage.addannouncement(path, path, path, path);
+		
+	}
+	@Test
+	public void forgotpasswordlink() {
+		forgotpasswordlink.forgotPasswordLink(props.getProperty("username"));
+		
+		
+	}
 }
+
+
