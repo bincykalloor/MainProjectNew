@@ -15,7 +15,7 @@ public class QaLegendAddMemberPage {
 		WebElement firstnamefield;
 		@FindBy(xpath="//input[@id='last_name']")
 		WebElement lastnamefield;
-		@FindBy(xpath="//button[@id='form-next']")
+		@FindBy(xpath="//button[@class='btn btn-info']")
 		WebElement nextbutton;
 		@FindBy(xpath="//input[@id='job_title']")
 		WebElement jobtitlefield;

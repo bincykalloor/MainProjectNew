@@ -11,7 +11,7 @@ public class QaLegendAddPaymentPage {
 		WebDriver driver;
 		@FindBy(xpath="(//a[text()=' Add payment'])[1]")
 		WebElement addpaymentbutton;
-		@FindBy(xpath="//span[@id='select2-chosen-7']")
+		@FindBy(xpath="//div[@id='s2id_invoice_id']")
 		WebElement invoicefield;
 		@FindBy(xpath="(//input[@class='select2-input'])[5]")
 		WebElement paymentmethodfield;

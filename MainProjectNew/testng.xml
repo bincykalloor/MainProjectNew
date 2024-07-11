@@ -14,8 +14,8 @@
 		<!--<include name="composeMessage"></include>-->
 		<!--<include name="addpayments"></include>-->
 		<!--<include name="additems"></include>-->
-		<!--<include name="addmemberdetails"></include>-->
-		<include name="forgotpasswordlink"></include>
+		<include name="addmemberdetails"></include>
+		<!--<include name="forgotpasswordlink"></include>-->
 	  </methods>
     </classes>
   </test> <!-- Test -->
