@@ -56,7 +56,7 @@
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">Jul 8, 2024 12:24:23 pm</span>
+                    <span class="badge badge-primary">Jul 17, 2024 09:16:56 pm</span>
                 </a>
             </li>
         </ul>
@@ -113,7 +113,7 @@
 						
 						
 						
-						
+						<a class="dropdown-item" status="skip" href="#"><span>Skip</span><span class="status warning pull-right"></span></a>
 						<div class="dropdown-divider"></div>
 						<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 					</ul>
@@ -131,19 +131,19 @@
 					</div>
 					<div class="open-test">
 						<div class="test-detail">
-							<p class="name">addmemberdetails</p>
-							<p class="duration text-sm">0h 0m 8s+230ms</p>
-							<span class="datetime">12:24:34 pm</span>
+							<p class="name">addEditNotes</p>
+							<p class="duration text-sm">0h 0m 15s+880ms</p>
+							<span class="datetime">21:18:14 pm</span>
 						</div>
 					</div>
 					<div class="test-contents d-none">
 						<div class="detail-head">
 							<div class="p-v-10 d-inline-block">
 								<div class="info">
-									<h5 class="test-status text-fail">addmemberdetails</h5>
-									<span class='badge badge-success'>07.08.2024 12:24:34</span>
-									<span class='badge badge-danger'>07.08.2024 12:24:42</span>
-									<span class='badge badge-default'>0h 0m 8s+230ms</span>
+									<h5 class="test-status text-fail">addEditNotes</h5>
+									<span class='badge badge-success'>07.17.2024 21:18:14</span>
+									<span class='badge badge-danger'>07.17.2024 21:18:29</span>
+									<span class='badge badge-default'>0h 0m 15s+880ms</span>
 								</div>
 								<div class="m-t-10 m-l-5">
 									
@@ -160,17 +160,17 @@
 	<tbody>
 			<tr class="event-row">
 				<td><i class="fa fa-times text-fail"></i></td>
-				<td>12:24:42 pm</td>
+				<td>9:18:29 pm</td>
 				<td>
-						<textarea disabled class="code-block">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a href="#" class="btn btn-default" title="Add member" data-act="ajax-modal" data-title="Add member" data-action-url="https://qalegend.com/crm/index.php/team_members/modal_form">...</a> is not clickable at point (1432, 96). Other element would receive the click: <div class="modal in" id="ajaxModal" tabindex="-1" role="dialog" aria-labelledby="ajaxModal" aria-hidden="true" style="display: block;">...</div>
+						<textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#email"}
   (Session info: chrome=126.0.6478.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.20.0', revision: '866c76ca80'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4ae198b8955c5102ef6d71fe4960b2ea, clickElement {id=f.FF4AAF7B0D79A0C917A51EE26AC0983D.d.EE7F0E5767D24822D6D149131AE5032E.e.72}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: C:\Users\bincy\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63503}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63503/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (4ae198b8955c5102ef6d71fe4960b2ea)] -> xpath: //a[text()=' Add member']]
-Session ID: 4ae198b8955c5102ef6d71fe4960b2ea
+Command: [1b933c5c3f26716d69b0c65fcaadbade, findElement {value=email, using=id}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: C:\Users\bincy\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57157}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57157/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1b933c5c3f26716d69b0c65fcaadbade
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -183,51 +183,37 @@ Session ID: 4ae198b8955c5102ef6d71fe4960b2ea
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy11.sendKeys(Unknown Source)
+	at Utilities.PageUtilities.enterText(PageUtilities.java:16)
+	at PageClasses.QaLegendLoginPage.LoginToQaLegend(QaLegendLoginPage.java:31)
+	at TestCases.QaLegend_TestCases.addEditNotes(QaLegend_TestCases.java:68)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy11.click(Unknown Source)
-	at Utilities.PageUtilities.clickOnElement(PageUtilities.java:12)
-	at PageClasses.QaLegendAddMemberPage.addmember(QaLegendAddMemberPage.java:50)
-	at TestCases.QaLegend_TestCases.addmemberdetails(QaLegend_TestCases.java:120)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:739)
-	at org.testng.TestRunner.run(TestRunner.java:614)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
 </textarea>
 				</td>
 			</tr>
 			<tr class="event-row">
 				<td><i class="fa fa-times text-fail"></i></td>
-				<td>12:24:42 pm</td>
+				<td>9:18:29 pm</td>
 				<td>
 						Test Case Failed
 				</td>
@@ -237,8 +223,56 @@ Session ID: 4ae198b8955c5102ef6d71fe4960b2ea
 </div>
 <div class="detail-foot">
 	<ul class="attachments">
-			<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\bincy\git\repository2\MainProjectNew\test-output\addmemberdetailspng' src='C:\Users\bincy\git\repository2\MainProjectNew\test-output\addmemberdetailspng'>
+			<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\bincy\git\repository2\MainProjectNew\test-output\addEditNotespng' src='C:\Users\bincy\git\repository2\MainProjectNew\test-output\addEditNotespng'>
 	</ul>
+</div>
+					</div>
+				</li>
+				<li class="test-item"  status="skip" test-id="2"
+					author=""
+					tag=""
+					device="">
+					<div class="status-avatar skip-bg">
+						<i class="fa fa-long-arrow-right text-white"></i>
+					</div>
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">additems</p>
+							<p class="duration text-sm">0h 0m 0s+1ms</p>
+							<span class="datetime">21:18:24 pm</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="detail-head">
+							<div class="p-v-10 d-inline-block">
+								<div class="info">
+									<h5 class="test-status text-skip">additems</h5>
+									<span class='badge badge-success'>07.17.2024 21:18:24</span>
+									<span class='badge badge-danger'>07.17.2024 21:18:24</span>
+									<span class='badge badge-default'>0h 0m 0s+1ms</span>
+								</div>
+								<div class="m-t-10 m-l-5">
+									
+								</div>
+							</div>
+						</div>
+<div class="detail-body mt-4">                                              
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-long-arrow-right text-skip"></i></td>
+				<td>9:18:24 pm</td>
+				<td>
+						TestCase Skipped
+				</td>
+			</tr>
+	</tbody>
+</table>
 </div>
 					</div>
 				</li>
@@ -282,13 +316,13 @@ Session ID: 4ae198b8955c5102ef6d71fe4960b2ea
 				<li class="test-item">
 					<div class="open-test">
 						<div class="test-detail">
-							<p class="name">org.openqa.selenium.ElementClickInterceptedException</p>
+							<p class="name">org.openqa.selenium.NoSuchElementException</p>
 							<p class="duration text-sm">1 tests</p>
 						</div>
 					</div>
 					<div class="test-contents d-none">
 						<div class="info">
-							<h4>org.openqa.selenium.ElementClickInterceptedException</h4>
+							<h4>org.openqa.selenium.NoSuchElementException</h4>
 						</div>
 						<table class='table table-sm mt-4'>
 							<thead>
@@ -305,9 +339,9 @@ Session ID: 4ae198b8955c5102ef6d71fe4960b2ea
 											<i class="fa fa-times text-white"></i>
 										</div>
 									</td>
-									<td>12:24:34 pm</td>
+									<td>21:18:14 pm</td>
 									<td class='linked' test-id='1'>
-										addmemberdetails
+										addEditNotes
 									</td>
 								</tr>
 							</tbody>
@@ -350,8 +384,8 @@ Session ID: 4ae198b8955c5102ef6d71fe4960b2ea
 						</small>
 					</div>
 					<div>
-						<small data-tooltip='100%'><b>1</b> tests failed, 
-						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+						<small data-tooltip='50%'><b>1</b> tests failed, 
+						<b>1</b> skipped, <b data-tooltip='0%'>0</b> others
 						</small>
 					</div>
 				</div>
@@ -370,8 +404,8 @@ Session ID: 4ae198b8955c5102ef6d71fe4960b2ea
 				<div class="card-footer">
 					<div><small data-tooltip='0%'><b>0</b> events passed</small></div>
 					<div>
-						<small data-tooltip='100%'><b>2</b> events failed, 
-						<b data-tooltip='0%'>0</b> others
+						<small data-tooltip='66.667%'><b>2</b> events failed, 
+						<b data-tooltip='33.333%'>1</b> others
 						</small>
 					</div>
 				</div>
@@ -385,7 +419,7 @@ Session ID: 4ae198b8955c5102ef6d71fe4960b2ea
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Tests</h6>
-							<h2 class="font-size-28 font-weight-light mt-3">1</h2>
+							<h2 class="font-size-28 font-weight-light mt-3">2</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
 							<span>.00%</span>
@@ -404,7 +438,7 @@ Session ID: 4ae198b8955c5102ef6d71fe4960b2ea
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Start</h6>
-							<h4 class="font-weight-light mt-4">Jul 8, 2024 12:24:23 pm</h4>
+							<h4 class="font-weight-light mt-4">Jul 17, 2024 09:16:56 pm</h4>
 							<span class="text-semibold text-success font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -420,7 +454,7 @@ Session ID: 4ae198b8955c5102ef6d71fe4960b2ea
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Duration</h6>
-							<h4 class="font-weight-light mt-4">0h 0m 19s+294ms</h4>
+							<h4 class="font-weight-light mt-4">0h 1m 33s+234ms</h4>
 							<span class="text-semibold font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -473,14 +507,14 @@ Session ID: 4ae198b8955c5102ef6d71fe4960b2ea
 </div>
 <script>
 	var statusGroup = {
-	    parentCount: 1,
+	    parentCount: 2,
 		passParent: 0,
 		failParent: 1,
 		fatalParent: 0,
 		errorParent: 0,
 		warningParent: 0,
-		skipParent: 0,
-		exceptionsParent: 1,
+		skipParent: 1,
+		exceptionsParent: 2,
 		childCount: 0,
 		passChild: 0,
 		failChild: 0,
@@ -501,13 +535,13 @@ Session ID: 4ae198b8955c5102ef6d71fe4960b2ea
 		infoGrandChild: 0,
 		debugGrandChild: 0,
 		exceptionsGrandChild: 0,
-		eventsCount: 2,
+		eventsCount: 3,
 		passEvents: 0,
 		failEvents: 2,
 		fatalEvents: 0,
 		errorEvents: 0,
 		warningEvents: 0,
-		skipEvents: 0,
+		skipEvents: 1,
 		infoEvents: 0,
 		debugEvents: 0,
 		exceptionsEvents: 0
@@ -515,7 +549,7 @@ Session ID: 4ae198b8955c5102ef6d71fe4960b2ea
 </script>
 <script>
 	var timeline = {
-	        "addmemberdetails":8.23
+	        "addEditNotes":15.88,"additems":0.001
 	};
 </script>
                 </div>

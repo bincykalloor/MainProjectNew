@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import Utilities.PageUtilities;
+import Utilities.WaitUtility;
 
 public class QaLegendClientsPage {
 		WebDriver driver;
@@ -27,6 +28,10 @@ public class QaLegendClientsPage {
 		WebElement phonenumberfield;
 		@FindBy(xpath="//button[text()=' Save']")
 		WebElement savebutton;
+		@FindBy(xpath="//div[@id='client-table_filter']//input]")
+		WebElement searchbox;
+		@FindBy(xpath="(//tr[@class='odd']//a)[1]")
+		WebElement compname;
 		
 		
 		
@@ -57,4 +62,10 @@ public class QaLegendClientsPage {
 				PageUtilities.clickOnElement(savebutton);
 		}
 		
+		public void searchclients(String searchvalue) throws InterruptedException {
+			WaitUtility.waitForAnElementToBeVisible(driver, searchbox);
+			PageUtilities.clickAnElement(driver, searchbox);
+			PageUtilities.enterText(searchbox, searchvalue);
+		
+}
 }

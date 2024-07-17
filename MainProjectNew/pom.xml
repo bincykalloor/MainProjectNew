@@ -3,6 +3,22 @@
   <groupId>ObsquraMainProject</groupId>
   <artifactId>MainProjectNew</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.3.1</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+      </plugin>
+      </plugins>
+    </pluginManagement>
+    </build>
    <dependencies>
 	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 <dependency>
@@ -33,5 +49,21 @@
     <version>7.0.0</version>
     <scope>test</scope>
 </dependency>
+ 
+ <!-- https://mvnrepository.com/ -->
+	<dependency>
+	<groupId>org.apache.poi</groupId>
+	<artifactId>poi</artifactId>
+	<version>3.7</version>
+	</dependency>
+
+	<!-- https://mvnrepository.com/ -->
+	<dependency>
+	<groupId>org.apache.poi</groupId>
+	<artifactId>poi-ooxml</artifactId>
+	<version>3.7</version>
+	</dependency>
+
+
 </dependencies>
 </project>

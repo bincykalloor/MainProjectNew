@@ -14,6 +14,8 @@ public class QaLegendAddPaymentPage {
 		@FindBy(xpath="//div[@id='s2id_invoice_id']")
 		WebElement invoicefield;
 		@FindBy(xpath="(//input[@class='select2-input'])[5]")
+		WebElement invoicesearchfield;
+		@FindBy(xpath="//div[@id='select2-result-label-15']")
 		WebElement paymentmethodfield;
 		@FindBy(xpath="//input[@id='invoice_payment_date']")
 		WebElement paymentdatefield;

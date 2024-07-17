@@ -17,7 +17,7 @@ public class QaLegendNotesPage {
 		WebElement descriptionfield;
 		@FindBy(xpath="//button[@class='btn btn-primary']")
 		WebElement savebutton;
-		@FindBy(xpath="//input[@placeholder='Search']")
+		@FindBy(xpath="//div[@id='note-table_filter']//input")
 		WebElement notessearchbox;
 		@FindBy(xpath="(//a[@class='edit'])[1]")
 		WebElement searchtitle;
@@ -38,7 +38,8 @@ public class QaLegendNotesPage {
 			PageUtilities.clickOnElement(savebutton);
 		}
 		
-	 public void searchNotes(String title,WebDriver driver) {
+	 public void searchNotes(String title,WebDriver driver) throws InterruptedException {
+		 Thread.sleep(2000);
 		 PageUtilities.enterText(notessearchbox, title);
 		 PageUtilities.clickAnElement(driver,notessearchbox);
 	 }

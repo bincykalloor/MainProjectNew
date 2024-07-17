@@ -24,6 +24,12 @@ public class QaLegendMessagesPage {
 		WebElement sendButton;
 		@FindBy(xpath = "//textarea[@name='message']")
 		WebElement writeAmessage;
+		@FindBy(xpath="(//a[@class='list-group-item'])[3]")
+		WebElement sendMessageTab;
+		@FindBy(xpath="//input[@id='search-messages']")
+		WebElement sendItemsSearchTab;
+		@FindBy(xpath="//div[@class='pull-left message-row ']")
+		WebElement message;
 
 		
 		
@@ -47,6 +53,14 @@ public class QaLegendMessagesPage {
 			PageUtilities.clickOnElement(sendButton);
 
 		}
+		
+		public void searchForSendMessage(String sub) {
+			PageUtilities.clickOnElement(sendMessageTab);
+			PageUtilities.clickOnElement(sendItemsSearchTab);
+			PageUtilities.enterText(sendItemsSearchTab, sub);
+			
+		}
+		
 		
 		
 }

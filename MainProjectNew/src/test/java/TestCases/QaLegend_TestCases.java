@@ -1,27 +1,30 @@
 package TestCases;
 
 import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertEquals;
+
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.Properties;
 import java.util.Random;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
 import AutomationCore.BaseClass;
 import PageClasses.QaLegendAddItemPage;
-import PageClasses.QaLegendAddMemberPage;
 import PageClasses.QaLegendAddPaymentPage;
-import PageClasses.QaLegendAnnouncementPage;
 import PageClasses.QaLegendClientsPage;
 import PageClasses.QaLegendDashboard;
 import PageClasses.QaLegendEventsPage;
-import PageClasses.QaLegendForgotPassword;
+
 import PageClasses.QaLegendLoginPage;
 import PageClasses.QaLegendMessagesPage;
 import PageClasses.QaLegendNotesPage;
+import Utilities.ExcelUtility;
 
 public class QaLegend_TestCases extends BaseClass {
 		public WebDriver driver;
@@ -36,13 +39,11 @@ public class QaLegend_TestCases extends BaseClass {
 		QaLegendMessagesPage messagepage;
 		QaLegendAddPaymentPage addpaymentpage;
 		QaLegendAddItemPage additemspage;
-		QaLegendAddMemberPage addmemberpage;
-		QaLegendAnnouncementPage addannouncementpage;
-		QaLegendForgotPassword forgotpasswordlink;
 		Random rand;
 	@BeforeMethod	
-		public void initialization()throws Exception {
-			driver=browserinitialization("chrome");
+	@Parameters("browser")
+		public void initialization(String browser)throws Exception {
+			driver=browserinitialization(browser);
 			loginpage=new QaLegendLoginPage(driver);
 			dashboard=new QaLegendDashboard(driver);
 			notespage=new QaLegendNotesPage(driver);
@@ -51,9 +52,7 @@ public class QaLegend_TestCases extends BaseClass {
 			messagepage=new QaLegendMessagesPage(driver);
 			addpaymentpage=new QaLegendAddPaymentPage(driver);
 			additemspage=new QaLegendAddItemPage(driver);
-			addmemberpage=new QaLegendAddMemberPage(driver);
-			addannouncementpage=new QaLegendAnnouncementPage(driver);
-			forgotpasswordlink=new QaLegendForgotPassword(driver);
+			
 			rand=new Random();
 			driver.manage().window().maximize();
 			props=new Properties();
@@ -64,7 +63,7 @@ public class QaLegend_TestCases extends BaseClass {
 	}
 	
 	@Test
-	public void addEditNotes() {
+	public void addEditNotes() throws InterruptedException {
 		System.out.println("testcase1");
 		loginpage.LoginToQaLegend(props.getProperty("username"),props.getProperty("password"));
 		dashboard.clicksOnNotesOption();
@@ -74,65 +73,63 @@ public class QaLegend_TestCases extends BaseClass {
 		Assert.assertEquals(notespage.getNoteTitle(), notetitle);
 	}
 	@Test
-	public void addEvents() {
+	public void addEvents() throws InterruptedException {
 		loginpage.LoginToQaLegend(props.getProperty("username"), props.getProperty("password"));
 		dashboard.clicksOnEventsOption();
-		eventspage.addevents(props.getProperty("eventstitle"), props.getProperty("eventsdescription"));
+		eventspage.addevents("eventstitle","eventsdescription", "startdate","enddate", driver);
+		
 		
 	}
 	@Test
 	public void addClients() {
 		loginpage.LoginToQaLegend(props.getProperty("username"), props.getProperty("password"));
 		dashboard.clicksOnClientsOption();
-		clientspage.addclients(props.getProperty("companyname"), props.getProperty("address"), props.getProperty("city"),props.getProperty("state"),props.getProperty("zip"),props.getProperty("country"),props.getProperty("phonenumber"));
+		String addclient=props.getProperty("companyname")+rand.nextInt(10000);
+		String address=props.getProperty("address")+rand.nextInt(10000);
+		String city=props.getProperty("state")+rand.nextInt(10000);
+		String zip=props.getProperty("zip")+rand.nextInt(10000);
+		String country=props.getProperty("country")+rand.nextInt(10000);
+		String phonenumber=props.getProperty("phonenumber")+rand.nextInt(10000);
+		clientspage.addclients(addclient, address, city, city, zip, country, phonenumber);
+		//clientspage.addclients(props.getProperty("companyname"), props.getProperty("address"), props.getProperty("city"),props.getProperty("state"),props.getProperty("zip"),props.getProperty("country"),props.getProperty("phonenumber"));
+		//clientspage.searchclients(props.getProperty("companyname"));
 		
 	}
 	@Test
-	public void composeMessage() {
+	public void composeMessage() throws IOException {
 		loginpage.LoginToQaLegend(props.getProperty("username"), props.getProperty("password"));
 		dashboard.clicksOnMessagesTab();
 		//messagepage.composeMessage(props.getProperty("to"), props.getProperty("subject"), props.getProperty("message"));
-		String subject=props.getProperty("subject")+rand.nextInt(1000);
-		String message=props.getProperty("message")+rand.nextInt(1000);
+		String subject=ExcelUtility.getString(1, 0, props.getProperty("excelpath"), "Compose")+rand.nextInt(1000);
+		String message=ExcelUtility.getString(1, 1, props.getProperty("excelpath"), "Compose")+rand.nextInt(1000);
 		messagepage.composeMessage(props.getProperty("to"), subject, message);
+		messagepage.searchForSendMessage(subject);
+		
 		
 		
 		
 	}
 	
-	@Test
-	public void addpayments() {
-		loginpage.LoginToQaLegend(props.getProperty("username"), props.getProperty("password"));
-		dashboard.clicksOnInvoicesTab();
-		addpaymentpage.addpayments(props.getProperty("invoice"), props.getProperty("paymentmethod"), props.getProperty("paymentdate"), props.getProperty("amount"), props.getProperty("note"));
-	}
+	
 	@Test
 	public void additems() {
 		loginpage.LoginToQaLegend(props.getProperty("username"), props.getProperty("password"));
 		dashboard.clicksOnAddItemsPage();
-		additemspage.additems(props.getProperty("itemtitle"), props.getProperty("itemdescription"), props.getProperty("itemunittype"), props.getProperty("itemrate"));
+		String itemtitle=props.getProperty("itemtitle")+rand.nextInt(10000);
+		String itemdescription=props.getProperty("itemdescription")+rand.nextInt(10000);
+		String itemunitrate=props.getProperty("itemunittype")+rand.nextInt(10000);
+		String itemrate=props.getProperty("itemrate")+rand.nextInt(10000);
+		additemspage.additems(itemtitle, itemdescription, itemunitrate, itemrate);
+		
+		
 	}
 	
-	@Test
-	public void addmemberdetails() {
-		loginpage.LoginToQaLegend(props.getProperty("username"), props.getProperty("password"));
-		dashboard.clicksOnTeamMembersTab();
-		addmemberpage.addmember(props.getProperty("firstname"), props.getProperty("lastname"));
-		
-		
-	}
-	@Test
-	public void addannouncement() {
-		loginpage.LoginToQaLegend(props.getProperty("username"), props.getProperty("password"));
-		dashboard.clicksOnAnnouncementTab();
-		addannouncementpage.addannouncement(path, path, path, path);
-		
-	}
-	@Test
-	public void forgotpasswordlink() {
-		forgotpasswordlink.forgotPasswordLink(props.getProperty("username"));
-		
-		
+	
+	
+	
+	@AfterMethod
+	public void teardown() {
+		driver.quit();
 	}
 }
 

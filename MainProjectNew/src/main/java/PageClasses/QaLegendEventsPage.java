@@ -30,20 +30,28 @@ public class QaLegendEventsPage {
 		
 		
 		
+		
 		public QaLegendEventsPage(WebDriver driver) {
 			this.driver=driver;
 			PageFactory.initElements(driver, this);
 		}
 		
-		public void addevents(String title,String eventdescription) {
+		public void addevents(String title,String eventdescription,String startdate,String enddate,WebDriver driver) throws InterruptedException {
 			PageUtilities.clickOnElement(addeventsbutton);
+			Thread.sleep(5000);
 			PageUtilities.enterText(titlefield, title);
 			PageUtilities.enterText(descriptionfield,eventdescription);
-			PageUtilities.clickOnElement(startdatefield);
-			PageUtilities.clickOnElement(enddatefield);
+			//PageUtilities.clickOnElement(startdatefield);
+			PageUtilities.enterText(startdatefield, startdate);
+		//	PageUtilities.clickOnElement(enddatefield);
+			PageUtilities.enterText(enddatefield, enddate);
 			PageUtilities.clickOnElement(starttimefield);
-			PageUtilities.clickOnElement(endtimefield);
-			PageUtilities.clickOnElement(savebutton);
+			//PageUtilities.clickOnElement(endtimefield);
+			PageUtilities.clickAnElement(driver, titlefield);
+			PageUtilities.clickAnElement(driver,savebutton);
 		}
+		
+		
+		
 		
 }

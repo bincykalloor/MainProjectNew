@@ -21,7 +21,10 @@ public class QaLegendAddItemPage {
 		WebElement itemratefield;
 		@FindBy(xpath="//button[text()=' Save']")
 		WebElement savebutton;
-		
+		@FindBy(xpath="//input[@aria-controls='item-table']")
+		WebElement itemsearchfield;
+		@FindBy(xpath="(//tr[@class='odd']//td)[1]")
+		WebElement itemtitlefield;
 		
 		
 		
@@ -44,4 +47,9 @@ public class QaLegendAddItemPage {
 			PageUtilities.clickOnElement(savebutton);
 		}
 		
+		public void searchitems(String searchtitle) {
+			PageUtilities.clickOnElement(itemsearchfield);
+			PageUtilities.clickOnElement(itemtitlefield);
+			PageUtilities.enterText(itemtitlefield, searchtitle);
+		}
 }
