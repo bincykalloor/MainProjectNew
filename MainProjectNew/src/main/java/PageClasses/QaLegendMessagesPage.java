@@ -54,12 +54,15 @@ public class QaLegendMessagesPage {
 
 		}
 		
-		public void searchForSendMessage(String sub) {
+		public void searchForSendMessage(String sub) throws InterruptedException {
+			Thread.sleep(2000);
 			PageUtilities.clickOnElement(sendMessageTab);
 			PageUtilities.clickOnElement(sendItemsSearchTab);
 			PageUtilities.enterText(sendItemsSearchTab, sub);
 			
 		}
+		
+		
 		
 		
 		

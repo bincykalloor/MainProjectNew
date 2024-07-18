@@ -4,12 +4,18 @@
   <listeners>
     <listener class-name="TestCases.Listeners"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" parallel="methods" name="Test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <groups>
+      <run>
+        <include name="RegressionTest"/>
+      </run>
+    </groups>
     <classes>
       <class name="TestCases.QaLegend_TestCases">
         <methods>
           <include name="composeMessage"/>
-          <include name="initialization"/>
+          <include name="addEditNotes"/>
         </methods>
       </class> <!-- TestCases.QaLegend_TestCases -->
     </classes>

@@ -2,6 +2,7 @@ package AutomationCore;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.OutputType;
@@ -15,6 +16,7 @@ import com.google.common.io.Files;
 
 public class BaseClass {
 	public WebDriver driver;
+	
 	public WebDriver browserinitialization(String browserName) throws Exception {
 		if(browserName.equalsIgnoreCase("chrome")) {
 			driver=new ChromeDriver();

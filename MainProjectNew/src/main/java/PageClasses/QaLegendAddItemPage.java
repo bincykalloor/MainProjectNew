@@ -29,6 +29,7 @@ public class QaLegendAddItemPage {
 		
 		
 		
+		
 		public QaLegendAddItemPage(WebDriver driver) {
 			this.driver=driver;
 			PageFactory.initElements(driver, this);
@@ -38,18 +39,21 @@ public class QaLegendAddItemPage {
 
 
 
-		public void additems(String title,String description,String unit,String itemrate) {
+		public void additems(String title,String itemrate) {
 			PageUtilities.clickOnElement(additembutton);
 			PageUtilities.enterText(titlefield, title);
-			PageUtilities.enterText(descriptionfield, description);
-			PageUtilities.enterText(unitfield, unit);
 			PageUtilities.enterText(itemratefield, itemrate);
 			PageUtilities.clickOnElement(savebutton);
 		}
 		
-		public void searchitems(String searchtitle) {
+		public void searchitems(String searchtitle) throws InterruptedException {
+			Thread.sleep(1000);
 			PageUtilities.clickOnElement(itemsearchfield);
-			PageUtilities.clickOnElement(itemtitlefield);
-			PageUtilities.enterText(itemtitlefield, searchtitle);
+			PageUtilities.enterText(itemsearchfield, searchtitle);
+		}
+		
+		public String additemstatus() {
+			String getTitle=PageUtilities.getElementText(itemtitlefield);
+			return getTitle;
 		}
 }

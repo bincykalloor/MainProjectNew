@@ -28,7 +28,7 @@ public class QaLegendClientsPage {
 		WebElement phonenumberfield;
 		@FindBy(xpath="//button[text()=' Save']")
 		WebElement savebutton;
-		@FindBy(xpath="//div[@id='client-table_filter']//input]")
+		@FindBy(xpath="//div[@id='client-table_filter']//input")
 		WebElement searchbox;
 		@FindBy(xpath="(//tr[@class='odd']//a)[1]")
 		WebElement compname;
@@ -63,9 +63,16 @@ public class QaLegendClientsPage {
 		}
 		
 		public void searchclients(String searchvalue) throws InterruptedException {
-			WaitUtility.waitForAnElementToBeVisible(driver, searchbox);
-			PageUtilities.clickAnElement(driver, searchbox);
+			Thread.sleep(1000);
+			//WaitUtility.waitForAnElementToBeVisible(driver, searchbox);
+			//PageUtilities.clickAnElement(driver, searchbox);
+			PageUtilities.clickOnElement(searchbox);
 			PageUtilities.enterText(searchbox, searchvalue);
+		}
 		
-}
+		public String getSearchClient() {
+			String getClientTitle=PageUtilities.getElementText(compname);
+			return getClientTitle;
+		}
+		
 }
