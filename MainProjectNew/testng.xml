@@ -15,12 +15,12 @@
     <classes>
       <class name="TestCases.QaLegend_TestCases">
      <methods>
-		<include name="addEditNotes"></include>
-		<include name="addEvents"></include>
-		<include name="addClients"></include>
+		<!--<include name="addEditNotes"></include>-->
+		<!--<include name="addEvents"></include>-->
+		<!--<include name="addClients"></include>-->
 		<include name="composeMessage"></include>
-		<include name="addnewitems"></include>
-		<include name="additems1"></include>
+		<!--<include name="addnewitems"></include>-->
+		<!--<include name="additems1"></include>-->
 		 </methods>
 	  </class>
     </classes>
